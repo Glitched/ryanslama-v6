@@ -5,7 +5,8 @@ export default (post: CollectionEntry<"blog">) => {
   return (
     <div
       style={{
-        background: "#fefbfb",
+        background: "#c6aa90",
+        color: "#2c2b33",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -18,8 +19,8 @@ export default (post: CollectionEntry<"blog">) => {
           position: "absolute",
           top: "-1px",
           right: "-1px",
-          border: "4px solid #000",
-          background: "#ecebeb",
+          border: "4px solid #2c2b33",
+          background: "#e6d5c4",
           opacity: "0.9",
           borderRadius: "4px",
           display: "flex",
@@ -32,8 +33,8 @@ export default (post: CollectionEntry<"blog">) => {
 
       <div
         style={{
-          border: "4px solid #000",
-          background: "#fefbfb",
+          border: "4px solid #2c2b33",
+          background: "#f7eee5",
           borderRadius: "4px",
           display: "flex",
           justifyContent: "center",
@@ -71,20 +72,6 @@ export default (post: CollectionEntry<"blog">) => {
               fontSize: 28,
             }}
           >
-            <span>
-              by{" "}
-              <span
-                style={{
-                  color: "transparent",
-                }}
-              >
-                "
-              </span>
-              <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-                {post.data.author}
-              </span>
-            </span>
-
             <span style={{ overflow: "hidden", fontWeight: "bold" }}>
               {SITE.title}
             </span>
