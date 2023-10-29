@@ -20,7 +20,7 @@ export default function Card({
 
   const headerProps = {
     style: { viewTransitionName: slugifyStr(title) },
-    className: "text-lg decoration-dashed hover:underline",
+    className: "text-base decoration-dashed hover:underline",
   };
 
   return (
@@ -43,8 +43,8 @@ export default function Card({
           </span>
         )}
       </a>
-      <Datetime datetime={pubDatetime} />
       <p className="text-base text-skin-muted">{description}</p>
+      <Datetime datetime={pubDatetime} />
     </li>
   );
 }
