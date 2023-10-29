@@ -1,11 +1,11 @@
 ---
-import { getCollection } from "astro:content";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import SearchBar from "@components/Search";
 import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import SearchBar from "@components/Search";
+import { getCollection } from "astro:content";
 
 // Retrieve all articles
 const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -20,8 +20,28 @@ const searchList = posts.map(({ data }) => ({
 
 <Layout title={`Search | ${SITE.title}`}>
   <Header activeNav="search" />
-  <Main pageTitle="Search" pageDesc="Search any article ...">
+  <Main pageTitle="Search">
     <SearchBar client:load searchList={searchList} />
   </Main>
   <Footer />
+  <script>
+    document.addEventListener("keydown", function (e) {
+      // Check for Cmd key on Mac or Ctrl key on other platforms
+      if (e.altKey || e.ctrlKey) {
+        const links = document.querySelectorAll("a > h2"); // Select all h2 tags inside a tags
+
+        for (let i = 1; i <= 9; i++) {
+          // Check for key codes from 1-9
+          if (e.code === `Digit${i}`) {
+            const link = links[i - 1];
+            // Check if the link exists
+            if (link) {
+              const href = (link.parentElement as HTMLAnchorElement)?.href;
+              window.location.href = href; // Navigate to the link
+            }
+          }
+        }
+      }
+    });
+  </script>
 </Layout>

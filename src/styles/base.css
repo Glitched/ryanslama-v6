@@ -5,21 +5,60 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 251, 254, 251;
-    --color-text-base: 40, 39, 40;
-    --color-accent: 0, 108, 172;
-    --color-card: 230, 230, 230;
-    --color-card-muted: 205, 205, 205;
-    --color-border: 236, 233, 233;
+    --color-fill: 246, 238, 229;
+    --color-text-base: 44, 43, 51;
+    --color-text-muted: 83, 83, 88;
+    --color-accent: 146, 90, 35;
+    --color-card: 194, 166, 138;
+    --color-card-muted: 168, 161, 153;
+    --color-border: 44, 43, 51;
+    --color-bg-bright: 255, 251, 247;
+    --color-bg-code: 255, 248, 240;
+
+    /* Code */
+    --astro-code-color-text: #575279;
+    --astro-code-color-background: #faf4ed;
+    --astro-code-token-constant: #286983;
+    --astro-code-token-string: #cd892b;
+    --astro-code-token-comment: #7c768b;
+    --astro-code-token-keyword: #286983;
+    --astro-code-token-parameter: #907aa9;
+    --astro-code-token-function: #af4b67;
+    --astro-code-token-string-expression: #cd892b;
+    --astro-code-token-punctuation: #797593;
+    --astro-code-token-link: red;
   }
   html[data-theme="dark"] {
-    --color-fill: 33, 39, 55;
-    --color-text-base: 234, 237, 243;
-    --color-accent: 255, 107, 1;
-    --color-card: 52, 63, 96;
-    --color-card-muted: 138, 51, 2;
-    --color-border: 171, 75, 8;
+    --color-fill: 44, 43, 51;
+    --color-text-base: 232, 234, 243;
+    --color-text-muted: 175, 180, 199;
+    --color-accent: 180, 192, 232;
+    --color-card: 155, 155, 155;
+    --color-card-muted: 30, 29, 36;
+    --color-border: 175, 180, 199;
+    --color-bg-bright: 62, 61, 70;
+    --color-bg-code: 30, 29, 36;
+
+    /* Code */
+    /*  */
+    --astro-code-color-text: #e0def4;
+    /*  */
+    --astro-code-color-background: #1e1d24;
+    /*  */
+    --astro-code-token-constant: #99d6ee;
+    --astro-code-token-string: #f6c177;
+    /*  */
+    --astro-code-token-comment: #7e78a3;
+    /*  */
+    --astro-code-token-keyword: #4b96b4;
+    --astro-code-token-parameter: #907aa9;
+    /*  */
+    --astro-code-token-function: #ebbcba;
+    --astro-code-token-string-expression: #f6c177;
+    --astro-code-token-punctuation: #908caa;
+    --astro-code-token-link: red;
   }
+
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;
@@ -29,7 +68,7 @@
     display: block;
   }
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base 
+    @apply font-serif flex min-h-[100svh] flex-col bg-skin-fill text-skin-base
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
   section,
@@ -37,37 +76,40 @@
     @apply mx-auto max-w-3xl px-4;
   }
   a {
-    @apply outline-2 outline-offset-1 outline-skin-fill 
+    @apply outline-2 outline-offset-1 outline-skin-fill
     focus-visible:no-underline focus-visible:outline-dashed;
   }
   svg {
-    @apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
+    @apply inline-block fill-skin-base group-hover:fill-skin-accent;
   }
   svg.icon-tabler {
-    @apply inline-block h-6 w-6 scale-125 fill-transparent 
-    stroke-current stroke-2 opacity-90 group-hover:fill-transparent 
+    @apply inline-block h-6 w-6 scale-125 fill-transparent
+    stroke-current stroke-2 opacity-90 group-hover:fill-transparent
     sm:scale-110;
   }
   .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
-    prose-h3:italic prose-p:!text-skin-base 
-    prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
-    hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
-    prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
-    prose-figcaption:!text-skin-base prose-figcaption:opacity-70
-    prose-strong:!text-skin-base
+    @apply prose-code:bg-skin-code prose-headings:!mb-3
+    prose-headings:!text-skin-base prose-h3:italic
+    prose-p:!text-skin-base prose-a:!text-skin-base prose-a:!decoration-dashed
+    prose-a:underline-offset-8 hover:prose-a:text-skin-accent
+    prose-blockquote:!border-l-skin-accent prose-blockquote:border-opacity-50
+    prose-blockquote:opacity-80 prose-figcaption:!text-skin-base
+    prose-figcaption:opacity-70
 
-    
-    prose-code:rounded prose-code:bg-skin-card 
-    prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base 
+
+    prose-strong:!text-skin-base prose-code:rounded
+    prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base
     prose-code:before:!content-[''] prose-code:after:!content-['']
-    prose-pre:!text-skin-base prose-ol:!text-skin-base 
+    prose-pre:!text-skin-base prose-ol:!text-skin-base
     prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
     prose-table:text-skin-base prose-th:border
-    prose-th:border-skin-line prose-td:border 
-    prose-td:border-skin-line prose-img:mx-auto 
-    prose-img:!mt-2 prose-img:border-2 
+    prose-th:border-skin-line prose-td:border
+    prose-td:border-skin-line prose-img:mx-auto
+    prose-img:!mt-2 prose-img:border-2
     prose-img:border-skin-line prose-hr:!border-skin-line;
+  }
+  .prose code {
+    font-weight: 500;
   }
   .prose a {
     @apply break-words hover:!text-skin-accent;
@@ -97,7 +139,7 @@
 
   /* width */
   ::-webkit-scrollbar {
-    @apply w-3;
+    @apply w-2;
   }
 
   /* Track */
@@ -107,12 +149,12 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-skin-card;
+    @apply rounded-full bg-skin-card-muted;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-skin-card-muted;
+    @apply bg-skin-muted;
   }
 
   code,
