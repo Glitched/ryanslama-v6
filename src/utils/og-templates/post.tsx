@@ -6,7 +6,7 @@ export default (post: CollectionEntry<"blog">) => {
     <div
       style={{
         background: "#c6aa90",
-        color: "#2c2b33",
+        color: "#361715",
         width: "100%",
         height: "100%",
         display: "flex",
