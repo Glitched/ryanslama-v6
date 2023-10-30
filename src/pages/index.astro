@@ -32,17 +32,18 @@ const ICON_CLASS = "mb-1 mr-1";
   >
     <nav class="max-md:m-4 max-md:flex md:mr-8">
       <div
+        id="photo-bg"
         class="max-md:mr-4 md:mb-4 md:mt-4 md:w-full md:rounded-xl w-24 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74]"
       >
         <img
           src="/profile.jpeg"
           alt="Portrait photo of Ryan Slama during the day"
-          class="day-only ease-spring scale-105 transition-all duration-300 hover:rotate-3 hover:scale-110"
+          class="day-only ease-spring scale-105 transition-all duration-300 hover:rotate-3 hover:scale-125"
         />
         <img
           src="/profile-night.webp"
           alt="Portrait photo of Ryan Slama at night"
-          class="night-only ease-spring scale-105 transition-all duration-300 hover:rotate-3 hover:scale-110"
+          class="night-only ease-spring scale-105 transition-all duration-300 hover:rotate-3 hover:scale-125"
         />
       </div>
       <ul class="flex flex-col place-content-evenly items-stretch">
@@ -198,6 +199,12 @@ const ICON_CLASS = "mb-1 mr-1";
   <Footer />
 
   <style>
+    html[data-theme="light"] #photo-bg {
+      @apply bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74];
+    }
+    html[data-theme="dark"] #photo-bg {
+      @apply bg-[#856657] bg-gradient-to-b from-[#3f3d3c] to-[#303531];
+    }
     /* ===== Hero Section ===== */
     #hero {
       @apply max-w-lg pb-6;
