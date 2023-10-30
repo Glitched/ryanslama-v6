@@ -6,9 +6,9 @@
   :root,
   html[data-theme="light"] {
     --color-fill: 246, 238, 229;
-    --color-text-base: 44, 43, 51;
-    --color-text-muted: 83, 83, 88;
-    --color-accent: 146, 90, 35;
+    --color-text-base: 54, 23, 21;
+    --color-text-muted: 95, 67, 65;
+    --color-accent: 125, 87, 83;
     --color-card: 194, 166, 138;
     --color-card-muted: 168, 161, 153;
     --color-border: 44, 43, 51;

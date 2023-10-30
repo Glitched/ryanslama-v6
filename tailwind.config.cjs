@@ -89,6 +89,9 @@ module.exports = {
       xl: "1.4rem",
       xxl: "1.8rem",
     },
+    transitionTimingFunction: {
+      'spring': 'cubic-bezier(.59,.3,0,2.19)',
+    },
     typography: (theme) => ({
       DEFAULT: {
         css: {
