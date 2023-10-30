@@ -9,6 +9,8 @@ import {
   File,
   GithubLogo,
   MagnifyingGlass,
+  Moon,
+  Sun,
 } from "@phosphor-icons/react";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
@@ -30,12 +32,17 @@ const ICON_CLASS = "mb-1 mr-1";
   >
     <nav class="max-md:m-4 max-md:flex md:mr-8">
       <div
-        class="max-md:mr-4 md:mb-4 md:mt-4 md:w-full md:rounded-xl w-20 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74]"
+        class="max-md:mr-4 md:mb-4 md:mt-4 md:w-full md:rounded-xl w-24 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74]"
       >
         <img
           src="/profile.jpeg"
           alt="Portrait photo of Ryan Slama"
-          class="transition-all ease-in-out hover:scale-105"
+          class="day-only transition-all ease-in-out hover:scale-105"
+        />
+        <img
+          src="/profile-night.webp"
+          alt="Portrait photo of Ryan Slama"
+          class="night-only transition-all ease-in-out hover:scale-105"
         />
       </div>
       <ul class="flex flex-col place-content-evenly items-stretch">
@@ -73,6 +80,16 @@ const ICON_CLASS = "mb-1 mr-1";
           >
             <File size={ICON_SIZE} className={ICON_CLASS} />
             <span>Resume</span>
+          </LinkButton>
+        </li>
+        <li class="theme-btn">
+          <LinkButton href="#" className="night-only" title="Day">
+            <Sun size={ICON_SIZE} className={ICON_CLASS} />
+            <span>Day</span>
+          </LinkButton>
+          <LinkButton href="#" className="day-only" title="Night">
+            <Moon size={ICON_SIZE} className={ICON_CLASS} />
+            <span>Night</span>
           </LinkButton>
         </li>
       </ul>

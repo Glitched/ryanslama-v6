@@ -59,14 +59,6 @@
     --astro-code-token-link: red;
   }
 
-  #sun-svg,
-  html[data-theme="dark"] #moon-svg {
-    display: none;
-  }
-  #moon-svg,
-  html[data-theme="dark"] #sun-svg {
-    display: block;
-  }
   body {
     @apply font-serif flex min-h-[100svh] flex-col bg-skin-fill text-skin-base
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
@@ -130,6 +122,14 @@
   }
   .prose h2#table-of-contents + p {
     @apply hidden;
+  }
+
+  html[data-theme="dark"] .day-only {
+    display: none;
+  }
+
+  html[data-theme="light"] .night-only {
+    display: none;
   }
 
   /* ===== scrollbar ===== */

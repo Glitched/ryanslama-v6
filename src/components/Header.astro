@@ -71,14 +71,13 @@ const ICON_SIZE = "1.5rem";
             {
               SITE.lightAndDarkMode && (
                 <button
-                  id="theme-btn"
-                  class="focus-outline"
+                  class="focus-outline theme-btn"
                   title="Toggles light & dark"
                   aria-label="auto"
                   aria-live="polite"
                 >
-                  <Moon size={ICON_SIZE} id="moon-svg" />
-                  <Sun size={ICON_SIZE} id="sun-svg" />
+                  <Moon className="day-only" size={ICON_SIZE} id="moon-svg" />
+                  <Sun className="night-only" size={ICON_SIZE} id="sun-svg" />
                 </button>
               )
             }
@@ -141,10 +140,10 @@ const ICON_SIZE = "1.5rem";
   nav button svg {
     @apply h-6 w-6 fill-skin-base hover:fill-skin-accent;
   }
-  #theme-btn {
+  .theme-btn {
     @apply p-3 sm:p-1;
   }
-  #theme-btn svg {
+  .theme-btn svg {
     @apply scale-125 hover:rotate-12 sm:scale-100;
   }
 
