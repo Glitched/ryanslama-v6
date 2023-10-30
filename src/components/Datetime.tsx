@@ -8,7 +8,7 @@ export interface Props {
 
 export default function Datetime({ datetime, className }: Props) {
   return (
-    <div className={`flex items-center opacity-80 ${className}`}>
+    <div className={`flex items-center text-skin-muted ${className}`}>
       <span className="sr-only">Posted on:</span>
       <span className={`font-sans text-xs font-bold uppercase tracking-wide`}>
         <FormattedDatetime datetime={datetime} />
