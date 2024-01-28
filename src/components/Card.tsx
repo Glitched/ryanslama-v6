@@ -44,7 +44,7 @@ export default function Card({
         )}
       </a>
       <p className="text-base text-skin-muted">{description}</p>
-      <Datetime datetime={pubDatetime} />
+      <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
     </li>
   );
 }

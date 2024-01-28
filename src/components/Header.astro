@@ -41,7 +41,7 @@ const ICON_SIZE = "1.5rem";
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/posts" class={activeNav === "posts" ? "active" : ""}>
+            <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
               Posts
             </a>
           </li>
@@ -51,13 +51,13 @@ const ICON_SIZE = "1.5rem";
             </a>
           </li>
           <li>
-            <a href="/about" class={activeNav === "about" ? "active" : ""}>
+            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
               About
             </a>
           </li> -->
           <li>
             <LinkButton
-              href="/search"
+              href="/search/"
               className={`focus-outline p-3 sm:p-1 ${
                 activeNav === "search" ? "active" : ""
               } flex`}
@@ -67,9 +67,9 @@ const ICON_SIZE = "1.5rem";
               <MagnifyingGlass alt="Search - cmd+K or /" size={ICON_SIZE} />
             </LinkButton>
           </li>
-          <li>
-            {
-              SITE.lightAndDarkMode && (
+          {
+            SITE.lightAndDarkMode && (
+              <li>
                 <button
                   class="focus-outline theme-btn"
                   title="Toggles light & dark"
@@ -79,9 +79,9 @@ const ICON_SIZE = "1.5rem";
                   <Moon className="day-only" size={ICON_SIZE} id="moon-svg" />
                   <Sun className="night-only" size={ICON_SIZE} id="sun-svg" />
                 </button>
-              )
-            }
-          </li>
+              </li>
+            )
+          }
         </ul>
       </nav>
     </div>
