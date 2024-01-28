@@ -82,7 +82,7 @@ export default function SearchBar({ searchList }: Props) {
         </span>
         <input
           className={
-            "block w-full rounded-full bg-skin-bright py-3 pl-12 pr-3 " +
+            "bg-skin-bright block w-full rounded-full py-3 pl-12 pr-3 " +
             "placeholder:italic placeholder:text-opacity-75 " +
             "focus:outline-none"
           }
@@ -113,7 +113,7 @@ export default function SearchBar({ searchList }: Props) {
             <Card
               href={`/posts/${item.slug}/`}
               frontmatter={item.data}
-              key={`${refIndex}-${slugify(item.slug)}`}
+              key={`${refIndex}-${item.slug}`}
               shortcut={String(idx + 1)}
             />
           ))}

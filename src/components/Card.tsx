@@ -16,7 +16,7 @@ export default function Card({
   secHeading = true,
   shortcut,
 }: Props) {
-  const { title, pubDatetime, description } = frontmatter;
+  const { title, pubDatetime, modDatetime, description } = frontmatter;
 
   const headerProps = {
     style: { viewTransitionName: slugifyStr(title) },
@@ -43,7 +43,7 @@ export default function Card({
           </span>
         )}
       </a>
-      <p className="text-base text-skin-muted">{description}</p>
+      <p className="text-skin-muted text-base">{description}</p>
       <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
     </li>
   );
