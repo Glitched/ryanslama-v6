@@ -1,6 +1,5 @@
 import Card from "@components/Card";
 import { MagnifyingGlass } from "@phosphor-icons/react";
-import slugify from "@utils/slugify";
 import type { CollectionEntry } from "astro:content";
 import Fuse from "fuse.js";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -9,6 +8,7 @@ export type SearchItem = {
   title: string;
   description: string;
   data: CollectionEntry<"blog">["data"];
+  slug: string;
 };
 
 interface Props {
@@ -82,7 +82,7 @@ export default function SearchBar({ searchList }: Props) {
         </span>
         <input
           className={
-            "block w-full rounded-full bg-skin-bright py-3 pl-12 pr-3 " +
+            "bg-skin-bright block w-full rounded-full py-3 pl-12 pr-3 " +
             "placeholder:italic placeholder:text-opacity-75 " +
             "focus:outline-none"
           }
@@ -92,7 +92,7 @@ export default function SearchBar({ searchList }: Props) {
           value={inputVal}
           onChange={handleChange}
           autoComplete="off"
-          autoFocus
+          // autoFocus
           ref={inputRef}
         />
       </label>
@@ -111,9 +111,9 @@ export default function SearchBar({ searchList }: Props) {
         {searchResults &&
           searchResults.map(({ item, refIndex }, idx) => (
             <Card
-              href={`/posts/${slugify(item.data)}`}
+              href={`/posts/${item.slug}/`}
               frontmatter={item.data}
-              key={`${refIndex}-${slugify(item.data)}`}
+              key={`${refIndex}-${item.slug}`}
               shortcut={String(idx + 1)}
             />
           ))}

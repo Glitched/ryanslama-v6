@@ -1,28 +1,39 @@
 import { LOCALE } from "@config";
 
-export interface Props {
-  datetime: string | Date;
+interface DatetimesProps {
+  pubDatetime: string | Date;
+  modDatetime: string | Date | undefined | null;
+}
+
+interface Props extends DatetimesProps {
   size?: "sm" | "lg";
   className?: string;
 }
 
-export default function Datetime({ datetime, className }: Props) {
+export default function Datetime({
+  pubDatetime,
+  modDatetime,
+  className,
+}: Props) {
   return (
     <div className={`flex items-center text-skin-muted ${className}`}>
       <span className="sr-only">Posted on:</span>
       <span className={`font-sans text-xs font-bold uppercase tracking-wide`}>
-        <FormattedDatetime datetime={datetime} />
+        <FormattedDatetime
+          pubDatetime={pubDatetime}
+          modDatetime={modDatetime}
+        />
       </span>
     </div>
   );
 }
 
-const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
-  const myDatetime = new Date(datetime);
+const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
+  const myDatetime = new Date(modDatetime ? modDatetime : pubDatetime);
 
   const date = myDatetime.toLocaleDateString(LOCALE, {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
   });
 

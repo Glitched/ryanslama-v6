@@ -13,13 +13,13 @@ import {
   Sun,
 } from "@phosphor-icons/react";
 import getSortedPosts from "@utils/getSortedPosts";
-import slugify from "@utils/slugify";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
 // const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 // const socialCount = SOCIALS.filter(social => social.active).length;
 const ICON_SIZE = "1rem";
@@ -28,12 +28,12 @@ const ICON_CLASS = "mb-1 mr-1";
 
 <Layout>
   <div
-    class="mx-a grid-rows-main md:mt-12 md:grid-cols-main grid justify-center"
+    class="mx-a grid-rows-main md:grid-cols-main grid justify-center md:mt-12"
   >
     <nav class="max-md:m-4 max-md:flex md:mr-8">
       <div
         id="photo-bg"
-        class="max-md:mr-4 md:mb-4 md:mt-4 md:w-full md:rounded-xl w-24 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74]"
+        class="w-24 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74] max-md:mr-4 md:mb-4 md:mt-4 md:w-full md:rounded-xl"
       >
         <img
           src="/profile.jpeg"
@@ -111,15 +111,16 @@ const ICON_CLASS = "mb-1 mr-1";
         <>
           <section id="featured">
             <ul>
-              {featuredPosts.map(({ data }) => (
+              {featuredPosts.map(({ data, slug }) => (
                 <Card
-                  href={`/posts/${slugify(data)}`}
+                  href={`/posts/${slug}/`}
                   frontmatter={data}
                   secHeading={false}
                 />
               ))}
             </ul>
           </section>
+          {recentPosts.length > 0 && <Hr />}
         </>
       )
     } -->
@@ -129,11 +130,11 @@ const ICON_CLASS = "mb-1 mr-1";
           <h2>Recent posts</h2>
           <ul>
             {
-              sortedPosts.map(
-                ({ data }, index) =>
+              recentPosts.map(
+                ({ data, slug }, index) =>
                   index < 4 && (
                     <Card
-                      href={`/posts/${slugify(data)}`}
+                      href={`/posts/${slug}/`}
                       frontmatter={data}
                       secHeading={false}
                     />
@@ -220,7 +221,7 @@ const ICON_CLASS = "mb-1 mr-1";
       @apply max-w-lg pb-6;
     }
     #hero h1 {
-      @apply md:text-6xl inline-block text-3xl font-bold;
+      @apply inline-block text-3xl font-bold md:text-6xl;
     }
     #hero .rss-link {
       @apply mb-6;
@@ -245,7 +246,7 @@ const ICON_CLASS = "mb-1 mr-1";
     }
     #featured h2,
     #recent-posts h2 {
-      @apply md:text-2xl text-lg font-semibold tracking-wide;
+      @apply text-lg font-semibold tracking-wide md:text-2xl;
     }
     .all-posts-btn-wrapper {
       @apply my-8 text-center;
