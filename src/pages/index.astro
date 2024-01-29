@@ -28,9 +28,9 @@ const ICON_CLASS = "mb-1 mr-1";
 
 <Layout>
   <div
-    class="mx-a grid-rows-main md:grid-cols-main grid justify-center md:mt-12"
+    class="mx-a grid-rows-main grid justify-center md:mt-12 md:grid-cols-main"
   >
-    <nav class="max-md:m-4 max-md:flex md:mr-8">
+    <nav class="select-none max-md:m-4 max-md:flex md:mr-8">
       <div
         id="photo-bg"
         class="w-24 overflow-clip rounded-md bg-[#9e8e60] bg-gradient-to-r from-[#756a50] to-[#b19a74] max-md:mr-4 md:mb-4 md:mt-4 md:w-full md:rounded-xl"
@@ -38,12 +38,12 @@ const ICON_CLASS = "mb-1 mr-1";
         <img
           src="/profile.jpeg"
           alt="Portrait photo of Ryan Slama during the day"
-          class="day-only ease-spring scale-105 transition-all duration-300 hover:rotate-3 hover:scale-125"
+          class="day-only scale-105 transition-all duration-300 ease-spring hover:rotate-3 hover:scale-125"
         />
         <img
           src="/profile-night.webp"
           alt="Portrait photo of Ryan Slama at night"
-          class="night-only ease-spring scale-105 transition-all duration-300 hover:rotate-3 hover:scale-125"
+          class="night-only scale-105 transition-all duration-300 ease-spring hover:rotate-3 hover:scale-125"
         />
       </div>
       <ul class="flex flex-col place-content-evenly items-stretch">
@@ -68,7 +68,7 @@ const ICON_CLASS = "mb-1 mr-1";
           >
             <MagnifyingGlass size={ICON_SIZE} className={ICON_CLASS} />
             <span>Search</span>
-            <span class="text-skin-card float-right ml-2">⌘K</span>
+            <span class="float-right ml-2 text-skin-card">⌘K</span>
           </LinkButton>
         </li>
 
@@ -99,7 +99,7 @@ const ICON_CLASS = "mb-1 mr-1";
       <section id="hero" class="pt-0">
         <div class="ml-auto">
           <h1>Hey, I'm Ryan</h1>
-          <p class="text-skin-muted text-base antialiased">
+          <p class="text-base text-skin-muted antialiased">
             I’m a senior software engineer on Slack's Product Security
             Foundations team. I like weird music, modern board games, podcasts,
             and oxford commas.
@@ -164,7 +164,7 @@ const ICON_CLASS = "mb-1 mr-1";
                   Canary in the Datamines: Using Log Canary to find PII
                 </h3>
               </LinkButton>
-              <p class="text-skin-muted text-base">
+              <p class="text-base text-skin-muted">
                 Why does sensitive data always seem to end up places it
                 shouldn't? We won't answer that, but we will tell you how we
                 combat the problem. Log Canary probes our product for places
@@ -188,7 +188,7 @@ const ICON_CLASS = "mb-1 mr-1";
                   10,000 Dependencies Under the Sea
                 </h3>
               </LinkButton>
-              <p class="text-skin-muted text-base">
+              <p class="text-base text-skin-muted">
                 Come on our journey of creating scalable tooling and processes
                 to automatically identify vulnerabilities in third-party
                 libraries and handle the question of “ok we found this, who’s
