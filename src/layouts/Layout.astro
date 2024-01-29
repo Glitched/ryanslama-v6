@@ -2,7 +2,6 @@
 import { SITE } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
-
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
@@ -10,9 +9,9 @@ export interface Props {
   author?: string;
   description?: string;
   ogImage?: string;
-  canonicalURL?: string;
+  canonicalURL?: string | undefined;
   pubDatetime?: Date;
-  modDatetime?: Date | null;
+  modDatetime?: Date | null | undefined;
   scrollSmooth?: boolean;
 }
 
