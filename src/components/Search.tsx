@@ -82,7 +82,7 @@ export default function SearchBar({ searchList }: Props) {
         </span>
         <input
           className={
-            "bg-skin-bright block w-full rounded-full py-3 pl-12 pr-3 " +
+            "block w-full rounded-full bg-skin-bright py-3 pl-12 pr-3 " +
             "placeholder:italic placeholder:text-opacity-75 " +
             "focus:outline-none"
           }
@@ -92,7 +92,7 @@ export default function SearchBar({ searchList }: Props) {
           value={inputVal}
           onChange={handleChange}
           autoComplete="off"
-          // autoFocus
+          autoFocus
           ref={inputRef}
         />
       </label>
