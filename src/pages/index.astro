@@ -37,12 +37,12 @@ const ICON_CLASS = "mb-1 mr-1";
       >
         <img
           src="/profile.jpeg"
-          alt="Portrait photo of Ryan Slama during the day"
+          alt="Portrait of Ryan Slama during the day"
           class="day-only scale-105 transition-all duration-300 ease-spring hover:rotate-3 hover:scale-125"
         />
         <img
           src="/profile-night.webp"
-          alt="Portrait photo of Ryan Slama at night"
+          alt="Portrait of Ryan Slama at night"
           class="night-only scale-105 transition-all duration-300 ease-spring hover:rotate-3 hover:scale-125"
         />
       </div>
@@ -84,14 +84,14 @@ const ICON_CLASS = "mb-1 mr-1";
           </LinkButton>
         </li>
         <li class="theme-btn">
-          <LinkButton href="#" className="night-only" title="Day">
+          <button class="night-only" title="Day">
             <Sun size={ICON_SIZE} className={ICON_CLASS} />
             <span>Day</span>
-          </LinkButton>
-          <LinkButton href="#" className="day-only" title="Night">
+          </button>
+          <button class="day-only" title="Night">
             <Moon size={ICON_SIZE} className={ICON_CLASS} />
             <span>Night</span>
-          </LinkButton>
+          </button>
         </li>
       </ul>
     </nav>
