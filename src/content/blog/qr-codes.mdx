@@ -33,7 +33,7 @@ _You can scan either code, despite all values being above or below 50% gray._
 The absolute value of the brightness for each box doesn’t matter. QR code scanners consider the average brightness for the entire code and interpret bits based on whether the value is above or below the median. That allows us to render scannable QR codes where the entire image is brighter or darker than 50% gray. This allows us to be more flexible with the images we output. Some prompts lend themselves to lighter or darker images. Now, we can render the blocks in any color as long as they’re brighter or darker than the median pixel in the code. We must allow a small margin of error here, since a camera may not perceive the brightness value exactly.
 
 <Image
-  className="center w-xs"
+  className="center w-64"
   src={minimal}
   alt="A QR code where each black square is just a tiny dot on the canvas"
 />
@@ -53,7 +53,7 @@ _An image and the corresponding guidance image we generated from it._
 Our plan was to use red to represent parts of the image that we did not want to constrain. Stable Diffusion was free to put anything in the red pixels. The white pixels must be bright, and the black pixels must be dark. Gray dots were common because we required every pixel to be above or below our target value. Our goal was to ensure that the center of each square in a generated image would clearly scan as the intended color. Grey never would appear in real conditioning images. Training our model took several iterations as we pieced together the above strategy. Each one took about 12 hours of GPU time.
 
 <Image
-  className="center w-xs"
+  className="center w-64"
   src={guidanceImage}
   alt="A red square with black or white dots corresponding to the color in the original QR code"
 />
