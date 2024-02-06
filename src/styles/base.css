@@ -33,7 +33,7 @@
     --color-text-base: 232, 234, 243;
     --color-text-muted: 175, 180, 199;
     --color-accent: 180, 192, 232;
-    --color-card: 155, 155, 155;
+    --color-card: 101, 107, 129;
     --color-card-muted: 30, 29, 36;
     --color-border: 175, 180, 199;
     --color-bg-bright: 62, 61, 70;
@@ -80,35 +80,35 @@
     sm:scale-110;
   }
   .prose {
-    @apply prose-code:bg-skin-code prose-headings:!mb-3
-    prose-headings:!text-skin-base prose-h3:italic
-    prose-p:!text-skin-base prose-a:!text-skin-base prose-a:!decoration-dashed
-    prose-a:underline-offset-8 hover:prose-a:text-skin-accent
-    prose-blockquote:!border-l-skin-accent prose-blockquote:border-opacity-50
-    prose-blockquote:opacity-80 prose-figcaption:!text-skin-base
-    prose-figcaption:opacity-70
+    @apply /* ASTRO
+    4.2.0 changes
+    */ /* */
+    prose-headings:!mb-3 prose-headings:!text-skin-base
+    prose-h3:italic prose-p:!text-skin-base
+    prose-a:!text-skin-base prose-a:!decoration-dashed
+    prose-a:underline-offset-8
 
 
-    prose-strong:!text-skin-base prose-code:rounded
-    prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base
-    prose-code:before:!content-[''] prose-code:after:!content-['']
-    prose-pre:!text-skin-base prose-ol:!text-skin-base
-    prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
-    prose-table:text-skin-base prose-th:border
-    prose-th:border-skin-line prose-td:border
-    prose-td:border-skin-line prose-img:mx-auto
-    prose-img:!mt-2 prose-img:border-2
-
-    /* ASTRO 4.2.0 changes */
-    /* prose-code:rounded prose-code:bg-skin-card
+    hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
+    prose-blockquote:border-opacity-50 prose-blockquote:opacity-80 prose-figcaption:!text-skin-base
+    prose-figcaption:opacity-70 prose-strong:!text-skin-base
+    prose-code:rounded prose-code:rounded
+    prose-code:bg-skin-card prose-code:bg-skin-code prose-code:bg-opacity-75
     prose-code:bg-opacity-75 prose-code:p-1
-    prose-code:before:!content-none prose-code:after:!content-none
-    prose-ol:!text-skin-base
-    prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
+    prose-code:p-1 prose-code:!text-skin-base
+    prose-code:before:!content-[''] prose-code:before:!content-none
+    prose-code:after:!content-[''] prose-code:after:!content-none
+
+    prose-pre:!text-skin-base prose-ol:!text-skin-base prose-ol:!text-skin-base prose-ul:overflow-x-clip prose-ul:overflow-x-clip
+    prose-ul:!text-skin-base prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
+    prose-li:marker:!text-skin-accent prose-table:text-skin-base
     prose-table:text-skin-base prose-th:border
-    prose-th:border-skin-line prose-td:border
+    prose-th:border
+    prose-th:border-skin-line prose-th:border-skin-line prose-td:border
+    prose-td:border prose-td:border-skin-line
     prose-td:border-skin-line prose-img:!my-2
-    prose-img:mx-auto prose-img:border-2  */
+    prose-img:mx-auto prose-img:mx-auto
+    prose-img:!mt-2 prose-img:border-2  prose-img:border-2
     prose-img:border-skin-line prose-hr:!border-skin-line;
   }
   .prose code {
