@@ -153,8 +153,31 @@ const ICON_CLASS = "mb-1 mr-1";
 
       <section id="recent-posts">
         <div class="ml-auto max-w-lg">
-          <h2>Talks I've given</h2>
+          <h2>Around the web</h2>
           <ul>
+            <li class="my-6">
+              <LinkButton
+                href="https://slack.engineering/catching-compromised-cookies/"
+                target="__blank"
+              >
+                <h3 class="text-base font-bold decoration-dashed">
+                  Catching Compromised Cookies
+                </h3>
+              </LinkButton>
+              <p class="text-base text-skin-muted">
+                We developed a system to detect compromised session cookies,
+                protecting user data from unauthorized access. The approach uses
+                a last access timestamp mechanism to identify cookie theft and
+                employs sophisticated techniques to reduce false positives while
+                maintaining performance at Slack's scale.
+              </p>
+              <span class="sr-only">Post published on:</span>
+              <span
+                class={`font-sans text-xs font-bold uppercase tracking-wide text-skin-muted`}
+              >
+                Slack Engineering Blog
+              </span>
+            </li>
             <li class="my-6">
               <LinkButton
                 href="https://slideslive.com/38942575/canary-in-the-datamines-using-log-canary-to-find-pii"
