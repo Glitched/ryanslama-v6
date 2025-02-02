@@ -5,7 +5,7 @@ export default (post: CollectionEntry<"blog">) => {
   return (
     <div
       style={{
-        background: "#c6aa90",
+        background: "#F6EEE5",
         color: "#361715",
         width: "100%",
         height: "100%",
@@ -16,66 +16,38 @@ export default (post: CollectionEntry<"blog">) => {
     >
       <div
         style={{
-          position: "absolute",
-          top: "-1px",
-          right: "-1px",
-          border: "4px solid #2c2b33",
-          background: "#e6d5c4",
-          opacity: "0.9",
-          borderRadius: "4px",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
-          margin: "2.5rem",
-          width: "88%",
-          height: "80%",
-        }}
-      />
-
-      <div
-        style={{
-          border: "4px solid #2c2b33",
-          background: "#f7eee5",
-          borderRadius: "4px",
-          display: "flex",
-          justifyContent: "center",
-          margin: "2rem",
-          width: "88%",
-          height: "80%",
+          margin: "20px",
+          width: "90%",
+          height: "90%",
         }}
       >
+        <p
+          style={{
+            fontSize: 300,
+            fontWeight: 300,
+            maxHeight: "84%",
+            overflow: "hidden",
+            lineHeight: 1.3,
+            marginBottom: "100px",
+          }}
+        >
+          {post.data.title}
+        </p>
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
             justifyContent: "space-between",
-            margin: "20px",
-            width: "90%",
-            height: "90%",
+            width: "100%",
+            marginBottom: "8px",
+            fontSize: 300,
           }}
         >
-          <p
-            style={{
-              fontSize: 72,
-              fontWeight: "bold",
-              maxHeight: "84%",
-              overflow: "hidden",
-            }}
-          >
-            {post.data.title}
-          </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "100%",
-              marginBottom: "8px",
-              fontSize: 28,
-            }}
-          >
-            <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-              {SITE.title}
-            </span>
-          </div>
+          <span style={{ overflow: "hidden", fontWeight: "semibold" }}>
+            {SITE.title}
+          </span>
         </div>
       </div>
     </div>
